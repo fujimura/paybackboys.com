@@ -9,7 +9,7 @@ interface Show {
 }
 
 const SPREADSHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBZoWsMb2wCOxYxYptDTdhQLwDcpBYzE9pywTfn6Hgk1VT03pejT-xYjxABOhxe9j0fyQ0kcgF-4Tz/pub?gid=0&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTs1ndgRVWLD8zf8IntYmq_Gd86CUcvC-MAq37sLMQ1oB1HAXpSlfumo42bb7GvwxwvWJQwns8pQs8V/pub?gid=0&single=true&output=csv";
 
 class Main extends React.Component<{}, { shows: Show[] }> {
   constructor(args: {}) {
