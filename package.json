@@ -1,0 +1,13 @@
+{
+  "name": "pbb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.4.2"
+  }
+}
