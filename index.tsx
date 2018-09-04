@@ -8,6 +8,7 @@ interface Show {
   venue: string;
 }
 
+// https://docs.google.com/spreadsheets/d/1M9tmpu_hkLYeFzn1tM2nqc68GEGiVj8q2F4LJVS1VyU/edit#gid=1124112482
 const SPREADSHEET_CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTs1ndgRVWLD8zf8IntYmq_Gd86CUcvC-MAq37sLMQ1oB1HAXpSlfumo42bb7GvwxwvWJQwns8pQs8V/pub?gid=0&single=true&output=csv";
 
@@ -18,11 +19,21 @@ class Main extends React.Component<{}, { shows: Show[] }> {
   }
 
   async componentDidMount() {
-    const shows = await (await fetch(SPREADSHEET_CSV_URL)).text();
-    this.setState({
-      shows: Papa.parse(shows).data.map(([date, venue]) => {
-        return { date: date, venue: venue };
+    const csv = await (await fetch(SPREADSHEET_CSV_URL, {
+      mode: "cors"
+    })).text();
+
+    const shows = Papa.parse(csv)
+      .data.filter(([date]) => {
+        // Show today's show
+        return new Date(Date.parse(date) + 24 * 60 * 60 * 1000) > new Date();
       })
+      .map(([date, venue]) => {
+        return { date: date, venue: venue };
+      });
+
+    this.setState({
+      shows
     });
   }
 
