@@ -14,5 +14,8 @@
     "papaparse": "^4.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.4.2"
+  },
+  "scripts": {
+    "server": "parcel index.html"
   }
 }
