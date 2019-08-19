@@ -11,9 +11,9 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "papaparse": "^4.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.4.2"
+    "papaparse": "^4",
+    "react": "^16",
+    "react-dom": "^16"
   },
   "scripts": {
     "server": "parcel index.html"
