@@ -56,7 +56,7 @@ class Main extends React.Component<{}, { shows: Show[] }> {
           width="100%"
           src="https://www.youtube.com/embed/2831-U7zm5A"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          style={{ marginBottom: "10px", border: "0" }}
+          style={{ marginBottom: "10px", minHeight: "315px", border: "0" }}
         />
         <iframe
           style={{ border: 0, width: "100%", height: "472px" }}
