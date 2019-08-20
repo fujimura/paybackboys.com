@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@types/papaparse": "^4.5.3",
+    "@types/papaparse": "^5.0.1",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "parcel-bundler": "^1.9.7",
