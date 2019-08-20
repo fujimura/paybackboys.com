@@ -42,7 +42,7 @@ class Main extends React.Component<{}, { shows: Show[] }> {
 
     return (
       <div>
-        <img src={logo} />
+        <img src={logo} alt="Payback Boys" />
         <h2>Upcoming shows</h2>
         <ul>
           {shows.map(({ date, venue }) => (
@@ -52,6 +52,12 @@ class Main extends React.Component<{}, { shows: Show[] }> {
             </li>
           ))}
         </ul>
+        <iframe
+          width="100%"
+          src="https://www.youtube.com/embed/2831-U7zm5A"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          style={{ marginBottom: "10px", minHeight: "315px", border: "0" }}
+        />
         <iframe
           style={{ border: 0, width: "100%", height: "472px" }}
           src="https://bandcamp.com/EmbeddedPlayer/album=3511319946/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/"
