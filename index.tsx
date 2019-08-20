@@ -42,7 +42,7 @@ class Main extends React.Component<{}, { shows: Show[] }> {
 
     return (
       <div>
-        <img src={logo} />
+        <img src={logo} alt="Payback Boys" />
         <h2>Upcoming shows</h2>
         <ul>
           {shows.map(({ date, venue }) => (
