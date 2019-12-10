@@ -771,10 +771,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.7":
-  version "16.9.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.7.tgz#3b50cb38285a79fd325cf185e0d623e3e0dd2893"
-  integrity sha512-cF/zwVSOa/NQ5ZSLwUmAdeARgJkmu94shnqDO0dUOsp5roeS8SXtYv06uKeQMYgMjnP6dXH5CecxL+GibvqEFg==
+"@types/react@*", "@types/react@^16.9.16":
+  version "16.9.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.16.tgz#4f12515707148b1f53a8eaa4341dae5dfefb066d"
+  integrity sha512-dQ3wlehuBbYlfvRXfF5G+5TbZF3xqgkikK7DWAsQXe2KnzV+kjD4W2ea+ThCrKASZn9h98bjjPzoTYzfRqyBkw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
