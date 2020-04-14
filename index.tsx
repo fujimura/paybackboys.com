@@ -43,15 +43,19 @@ class Main extends React.Component<{}, { shows: Show[] }> {
     return (
       <div>
         <img src={logo} alt="Payback Boys" />
-        <h2>Upcoming shows</h2>
-        <ul>
-          {shows.map(({ date, venue }) => (
-            <li key={date}>
-              <span className="live-date">{date}</span>
-              <span className="live-venue">{venue}</span>
-            </li>
-          ))}
-        </ul>
+        {shows.length > 0 && (
+          <div>
+            <h2>Upcoming shows</h2>
+            <ul>
+              {shows.map(({ date, venue }) => (
+                <li key={date}>
+                  <span className="live-date">{date}</span>
+                  <span className="live-venue">{venue}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <iframe
           width="100%"
           src="https://www.youtube.com/embed/2831-U7zm5A"
