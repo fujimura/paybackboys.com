@@ -1,4 +1,4 @@
-import Nano, { h } from "nano-jsx";
+import { h, Fragment, renderSSR } from "nano-jsx";
 import * as Papa from "papaparse";
 import { getAssetFromKV } from "@cloudflare/kv-asset-handler";
 import { KVError } from "@cloudflare/kv-asset-handler/dist/types";
@@ -27,14 +27,14 @@ const App = ({ shows }: { shows: Show[] }) => {
     <div>
       <img src="./public/logo.jpg" alt="Payback Boys" />
       <h2>Upcoming shows</h2>
-      <ul>
+      <dl class="live-date">
         {shows.map(({ date, venue }) => (
-          <li key={date}>
-            <span class="live-date">{date}</span>
-            <span class="live-venue">{venue}</span>
-          </li>
+          <Fragment key={date}>
+            <dt>{date}</dt>
+            <dd>{venue}</dd>
+          </Fragment>
         ))}
-      </ul>
+      </dl>
       <iframe
         width="100%"
         src="https://www.youtube.com/embed/2831-U7zm5A"
@@ -90,9 +90,24 @@ const render = (body: string): string => `
       list-style-type: none;
         padding: 0;
     }
-    .live-date {
+    dl.live-date {
+      display: flex;
+      flex-wrap: wrap;
       margin-right: 5px;
       font-weight: bold;
+    }
+    .live-date dt {
+      box-sizing: border-box;
+      width: 50%;
+      margin: 0;
+      text-align: right;
+      padding-right: 1em;
+    }
+    .live-date dd {
+      box-sizing: border-box;
+      width: 50%;
+      margin: 0;
+      text-align: left;
     }
   </style>
   </head>
@@ -127,7 +142,7 @@ const index: Handler = async (request, env, ctx) => {
       return { date: date, venue: venue };
     });
 
-  const app = Nano.renderSSR(<App shows={shows} />);
+  const app = renderSSR(<App shows={shows} />);
   const html = render(app);
 
   return new Response(html, {
