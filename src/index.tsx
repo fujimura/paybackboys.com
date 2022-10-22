@@ -109,6 +109,7 @@ type Handler = (
   ctx: ExecutionContext
 ) => Promise<Response | null>;
 
+// TODO: Handle request with query parameters
 const index: Handler = async (request, env, ctx) => {
   const url = new URL(request.url);
   if (url.pathname != "/") return null;
@@ -135,6 +136,7 @@ const index: Handler = async (request, env, ctx) => {
   });
 };
 
+// TODO: Handle request with query parameters
 const assets: Handler = async (request, env, ctx) => {
   const url = new URL(request.url);
 
@@ -162,6 +164,29 @@ const assets: Handler = async (request, env, ctx) => {
   }
 };
 
+// TODO: Handle request with query parameters
+const rootObjects: Handler = async (request, env, ctx) => {
+  const url = new URL(request.url);
+
+  if (
+    !["/browserconfig.xml", "/manifest.json", "/favicon.ico"].includes(
+      url.pathname
+    )
+  )
+    return null;
+
+  return await getAssetFromKV(
+    {
+      request,
+      waitUntil: (p) => ctx.waitUntil(p),
+    },
+    {
+      ASSET_NAMESPACE: env.__STATIC_CONTENT,
+      ASSET_MANIFEST: assetManifest,
+    }
+  );
+};
+
 const f = async (
   request: Request,
   env: Env,
@@ -169,7 +194,7 @@ const f = async (
 ): Promise<Response> => {
   const run = (h: Handler) => h(request, env, ctx);
 
-  for (const h of [assets, index]) {
+  for (const h of [assets, index, rootObjects]) {
     const res = await run(h);
     if (res) return res;
   }
