@@ -26,11 +26,12 @@ const App = ({ shows }: { shows: Show[] }) => {
   return (
     <div>
       <img src="./public/logo.jpg" alt="Payback Boys" />
+      <h2>Upcoming shows</h2>
       <ul>
         {shows.map(({ date, venue }) => (
           <li key={date}>
-            <span className="live-date">{date}</span>
-            <span className="live-venue">{venue}</span>
+            <span class="live-date">{date}</span>
+            <span class="live-venue">{venue}</span>
           </li>
         ))}
       </ul>
