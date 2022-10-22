@@ -10,5 +10,8 @@
   "scripts": {
     "start": "wrangler dev",
     "deploy": "wrangler publish"
+  },
+  "dependencies": {
+    "nano-jsx": "^0.0.34"
   }
 }
