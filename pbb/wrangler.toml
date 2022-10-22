@@ -1,3 +1,5 @@
 name = "pbb"
 main = "src/index.tsx"
 compatibility_date = "2022-10-22"
+[site]
+bucket = "./public" # Add the directory with your static assets!
