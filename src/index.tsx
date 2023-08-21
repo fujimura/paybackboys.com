@@ -36,18 +36,12 @@ const App = ({ shows }: { shows: Show[] }) => {
         ))}
       </dl>
       <iframe
-        width="100%"
-        src="https://www.youtube.com/embed/2831-U7zm5A"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        style={{ marginBottom: "10px", minHeight: "315px", border: "0" }}
-      />
-      <iframe
-        style={{ border: 0, width: "100%", height: "472px" }}
-        src="https://bandcamp.com/EmbeddedPlayer/album=3511319946/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/"
+        style="border: 0; width: 350px; height: 555px;"
+        src="https://bandcamp.com/EmbeddedPlayer/album=1870396252/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
         seamless
       >
-        <a href="http://wdsounds.bandcamp.com/album/payback-boys-struggle-for-pride">
-          PAYBACK BOYS &quot;struggle for pride&quot; by PAYBACK BOYS
+        <a href="https://wdsounds.bandcamp.com/album/payback-boys-invisible-moments">
+          PAYBACK BOYS &quot;INVISIBLE MOMENTS&quot; by PAYBACK BOYS
         </a>
       </iframe>
     </div>
